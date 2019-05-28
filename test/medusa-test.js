@@ -54,47 +54,49 @@ describe('Medusa', function() {
 
   it('should unstone the the first victim and stone the 4th coming in', function() {
     // create medusa
-    var medusa = new Medusa('Meeka');
+    var medusa = new Medusa('Allison');
     // create first victim
-    var victim1 = new Person('Lousia');
+    var victim1 = new Person('Kim');
     // create second victim
-    var victim2 = new Person('Bree');
+    var victim2 = new Person('Kayne');
     // create third victim
-    var victim3 = new Person('TayTay');
+    var victim3 = new Person('Khloe');
     // create fourth victim
-    var victim4 = new Person('Steve');
+    var victim4 = new Person('Kourtney');
     // medusa stares at first victim
     medusa.stare(victim1);
     // assert that the first victim is stoned
     assert.equal(victim1.stoned, true);
     // medusa stares at second victim
     medusa.stare(victim2);
-
     // medusa stares at third victim
+    medusa.stare(victim3);
     // medusa stares at fourth victim
+    medusa.stare(victim4);
     // assert the fourth victim is stoned
-
+    assert.equal(victim4.stoned, true);
     // assert that the first victim is not stoned
+    assert.equal(victim1.stoned, false);
   });
 })
 
 describe('Person', function() {
 
-  it.skip('should be a function', function() {
+  it('should be a function', function() {
     assert.isFunction(Person);
   });
 
-  it.skip('should instantiate our good friend, Person', function() {
+  it('should instantiate our good friend, Person', function() {
     var person = new Person();
     assert.isObject(person);
   });
 
-  it.skip('should have a name', function() {
+  it('should have a name', function() {
     var person = new Person('Steve');
     assert.equal(person.name, 'Steve');
   });
 
-  it.skip('should be stoned after looking into Medusas eyes', function() {
+  it('should be stoned after looking into Medusas eyes', function() {
     var medusa = new Medusa('Brenna');
     var victim = new Person('Jhun');
 

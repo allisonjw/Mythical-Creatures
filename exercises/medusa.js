@@ -4,10 +4,11 @@ class Medusa {
   	this.statues = [];
   }	
   stare(victim) {
-  	victim.stoned = true;
-  	this.statues.push(victim);
-  	if (this.statues.length >3 ) {
-  		return this.statues.shift();
+    this.statues.push(victim);
+    victim.stoned = true;
+    if (this.statues.length > 3) {
+      this.statues[0].stoned = false;
+      this.statues.shift();
   	}
   	//check array lenth for 3 victims 
   }
