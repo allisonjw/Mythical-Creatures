@@ -18,7 +18,7 @@ describe('Medusa', function() {
     assert.equal(medusa.name, 'Bree');
   });
 
-  it('should start with no statues', function() {
+  it('should start wit.skiph no statues', function() {
     var medusa = new Medusa('Taytay');
     assert.equal(medusa.name, 'Taytay');
     assert.deepEqual(medusa.statues, []);
@@ -54,27 +54,26 @@ describe('Medusa', function() {
 
   it('should unstone the the first victim and stone the 4th coming in', function() {
     // create medusa
-    var medusa = new Medusa('Allison');
+    var medusa = new Medusa('Meeka');
     // create first victim
-    var victim1 = new Person('Kim');
     // create second victim
-    var victim2 = new Person('Kayne');
     // create third victim
-    var victim3 = new Person('Khloe');
     // create fourth victim
-    var victim4 = new Person('Kourtney');
+    var victim1 = new Person('Lousia');
+    var victim2 = new Person('Bree');
+    var victim3 = new Person('TayTay');
+    var victim4 = new Person('Steve');
     // medusa stares at first victim
     medusa.stare(victim1);
     // assert that the first victim is stoned
     assert.equal(victim1.stoned, true);
     // medusa stares at second victim
-    medusa.stare(victim2);
+    medusa.stare(victim3);
     // medusa stares at third victim
     medusa.stare(victim3);
     // medusa stares at fourth victim
     medusa.stare(victim4);
     // assert the fourth victim is stoned
-    assert.equal(victim4.stoned, true);
     // assert that the first victim is not stoned
     assert.equal(victim1.stoned, false);
   });

@@ -34,22 +34,23 @@ describe('Wizard', function() {
 
   it('should start rested', function() {
     // create wizard
-    var wizard = new Wizard({name: 'Jhun', bearded: false});
+    var wizard = new Wizard({name: "Allison"});
     // assert isRested returns true
-    assert.equal(wizard.isRested, true)
+    assert.equal(wizard.isRested, true);
   });
 
   it('should be able to cast spells', function() {
     // create wizard
-    var wizard = new Wizard({name: 'Jhun', bearded: false});
+    var wizard = new Wizard({name: "Allison"});
      // assert wizard.cast() returns 'MAGIC BULLET'
-    assert.equal(wizard.cast(), 'MAGIC BULLETT');
+    assert.equal(wizard.cast(), 'MAGIC BULLET');
+    
   });
 
   it('should only be able to cast 3 spells', function() {
     // create wizard
-    var wizard = new Wizard({name: 'Jhun', bearded: false});
-    assert.equal(wizard.cast(), 'MAGIC BULLETT');
+    var wizard = new Wizard({name: "Allison"});
+
     // assert isRested is true
     assert.equal(wizard.isRested, true);
     // cast()

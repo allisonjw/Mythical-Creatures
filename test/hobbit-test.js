@@ -13,7 +13,7 @@ describe('Hobbit', function() {
   });
 
   it('should have a name', function() {
-    var hobbit = new Hobbit('Bilbo'); //passing the param to the parking spot
+    var hobbit = new Hobbit('Bilbo'); 
     assert.equal(hobbit.name, 'Bilbo');
   });
 
@@ -24,29 +24,28 @@ describe('Hobbit', function() {
 
   it('should have an age', function() {
     var hobbit = new Hobbit('Meriadoc');
-    //check whats being passed in to the new instance before looking at the test//
     assert.equal(hobbit.name, 'Meriadoc'); 
-    assert.equal(hobbit.age, 0); //asserting the we have a hobbit
-  });       //named Meriadoc and a age of 0. why does test pass
+    assert.equal(hobbit.age, 0); 
+  });      
 
   it('should have gained 1 year after every birthday', function() {
     var hobbit = new Hobbit('Meriadoc');
-    assert.equal(hobbit.age, 0); //test//
-    hobbit.celebrateBirthday();  //3 functions that fire
-    hobbit.celebrateBirthday();  //before next test
+    assert.equal(hobbit.age, 0); 
+    hobbit.celebrateBirthday();  
+    hobbit.celebrateBirthday();  
     hobbit.celebrateBirthday();
-    assert.equal(hobbit.age, 3); //test//
+    assert.equal(hobbit.age, 3); 
   });
 
   function timeTravel(num, hobbit) {
     for (var i = 0; i < num; i++) {
       hobbit.celebrateBirthday();
-    };  //the class Hobbit doesnt know
-  }; //anuthing about this function so speak to that
+    };  
+  }; 
 
   it('should be considered a child at the age of 32', function() {
     var hobbit = new Hobbit('Taylor');
-    timeTravel(32, hobbit); //passing in the age and var timeTravel
+    timeTravel(32, hobbit); 
     assert.equal(hobbit.age, 32); 
     assert.equal(hobbit.adult, false);
   });

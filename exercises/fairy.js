@@ -1,12 +1,38 @@
 class Fairy {
-  constructor() {
+  constructor(name) {
+  	this.name = name;
+  	this.dust = 10;
+  	this.clothes = {dresses: ['Iris']};
+    this.disposition = 'Good natured';
+    this.humanWards = [];
   }	
+  receiveBelief() {
+  	this.dust++;
+  }
+  believe() {
+  	this.dust += 10;
+  }
+  makeDresses(dresses) {
+     // this.clothes.dresses = this.clothes.dresses.concat(flowers);
+  	for (var index = 0; index < dresses.length; index++) {
+  	this.clothes.dresses.push(dresses[index]);
+      }
+  	}
+  provoke() {
+      this.disposition = 'Vengeful';
+    }
+  replaceInfant(infant) {
+    if (this.disposition === 'Vengeful') {
+    infant.disposition = 'Malicious';
+    this.humanWards.push(infant);
+    }
+    if (this.humanWards.length >2) {
+      this.disposition = 'Good natured';
+    }
+    return infant;
+  }
 }
 
 
-module.exports = Fairy;
 
-// 1. read the test 
-// 2. ask yourself if its going to fail and why
-// 3. run the test
-// 4. make it pass
+module.exports = Fairy;

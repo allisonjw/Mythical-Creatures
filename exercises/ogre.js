@@ -1,12 +1,15 @@
 class Ogre {
-  constructor() {
-  }	
+	constructor (name, home = "Swamp") {
+		this.name = name;
+		this.home = home;
+		this.swings = 0;
+	}
+    encounter(human) {
+    	human.encounterCounter++;
+    }
+    swingAt(human) {
+    	this.swings++;
+    }
 }
 
-
 module.exports = Ogre;
-
-// 1. read the test 
-// 2. ask yourself if its going to fail and why
-// 3. run the test
-// 4. make it pass
