@@ -6,10 +6,20 @@ class Ogre {
 	}
     encounter(human) {
     	human.encounterCounter++;
+        if (human.noticesOgre() == true) {
+        this.swingAt(human)
     }
+}
     swingAt(human) {
     	this.swings++;
+        if (this.swings == 2) {
+        human.knockedOut = true
     }
+        return this.swings
+  }
+   apologize(human){
+       human.knockedOut = false;
+  }
 }
 
 module.exports = Ogre;
